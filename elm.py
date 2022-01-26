@@ -124,15 +124,15 @@ class elm():
 # built model, input the initialization data and train
 model = elm(hidden_nodes=100, activation_function='relu', random_type='normal', 
             x=X_train, y=y_train, C=0.1, elm_type='clf')
-beta, train_accuracy, running_time = model1.fit('solution')
+beta, train_accuracy, running_time = model.fit('solution')
 print("classifier beta:\n", beta)
 print("classifier train accuracy:", train_accuracy)
 print('classifier running time:', running_time)
 
 
 #show the confusion matrix and testing score based on prediction result
-prediction = model1.predict(X_test)
+prediction = model.predict(X_test)
 print(confusion_matrix(y_test, prediction)) 
 print(classification_report(y_test, prediction))
 print("classifier test prediction:", prediction)
-print('classifier test accuracy:', model1.score(X_test, y_test))
+print('classifier test accuracy:', model.score(X_test, y_test))
